@@ -33,8 +33,4 @@ public class DemandeInterventionLivraison extends DemandeIntervention implements
     public void setEntreptrise(String entreptrise) {
         this.entreptrise = entreptrise;
     }
-    
-    
-//    XXXXXXXXXXXXXXXXXXXXXXXX    
-    
 }

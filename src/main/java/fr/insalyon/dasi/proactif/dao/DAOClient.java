@@ -21,10 +21,15 @@ public abstract class DAOClient
         em.persist(e);
     }
     
+//    public static boolean isEmailUsed(String email)
+//    {
+//        EntityManager em = JpaUtil.obtenirEntityManager();
+//        return em.createQuery("SELECT c.mail FROM Client c").getResultList().contains(email);
+//    }
+//    
     public static List<Client> getClients()
     {
         EntityManager em = JpaUtil.obtenirEntityManager();
         return em.createQuery("SELECT c FROM Client c").getResultList();
-        
     }
 }

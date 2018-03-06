@@ -2,6 +2,7 @@ package fr.insalyon.dasi.proactif.metier.objetsmetier;
 
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,6 +35,7 @@ public class Client
     private Integer latitude;
     private Integer longitude;
     
+    @Column(unique=true)
     private String mail;
     
     private String motDePasse;
