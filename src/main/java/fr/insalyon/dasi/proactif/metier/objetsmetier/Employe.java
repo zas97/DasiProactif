@@ -76,11 +76,6 @@ public class Employe
     public String toString() {
         return "Employe{" + "idEmploye=" + idEmploye + ", numeroTelephone=" + numeroTelephone + ", heureDebut=" + heureDebut + ", heureFin=" + heureFin + ", motDePasse=" + motDePasse + '}';
     }
-    
-    
-    
-    
-    
 }
 
 

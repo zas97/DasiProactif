@@ -10,8 +10,8 @@ public class DemandeInterventionLivraison extends DemandeIntervention implements
     private String objet;
     private String entreptrise;
 
-    public DemandeInterventionLivraison(String objet, String entreptrise, Date datePublication, Date dateFin, String commentaire, Integer heureFin, DemandeInterventionStatus status) {
-        super(datePublication, dateFin, commentaire, heureFin, status);
+    public DemandeInterventionLivraison(String objet, String entreptrise, Date datePublication, Date dateFin, String commentaire, Employe charge, Client demandeur) {
+        super(datePublication, dateFin, commentaire, charge, demandeur);
         this.objet = objet;
         this.entreptrise = entreptrise;
     }

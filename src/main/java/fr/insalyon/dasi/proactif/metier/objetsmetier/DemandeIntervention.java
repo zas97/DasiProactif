@@ -1,9 +1,12 @@
 package fr.insalyon.dasi.proactif.metier.objetsmetier;
 
 import java.util.Date;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -12,13 +15,12 @@ import javax.persistence.TemporalType;
 @MappedSuperclass // enables subclasses to be stored in DB
 public abstract class DemandeIntervention
 {
-    
-    public enum DemandeInterventionStatus
+    public enum DemandeInterventionStatus // vraiment nécessaire ???
     {
-            NON_ASSIGNEE,
-            EN_COURS_DE_TRAITEMENT,
-            TERMINEE,
-            INCIDENT
+//            NON_ASSIGNEE, // charge = null
+//            EN_COURS_DE_TRAITEMENT, // charge != null
+            TERMINEE, // OK
+            INCIDENT // OK
     }
     
     @Id
@@ -32,17 +34,28 @@ public abstract class DemandeIntervention
     protected Date dateFin;
 
     protected String commentaire;
-    protected Integer heureFin;
 
+    @Enumerated(EnumType.STRING)
     protected DemandeInterventionStatus status;
 
-    public DemandeIntervention(Date datePublication, Date dateFin, String commentaire, Integer heureFin, DemandeInterventionStatus status) {
+    @ManyToOne
+    protected Employe charge;
+    
+    
+    @ManyToOne
+    protected Client demandeur;
+
+    
+    public DemandeIntervention(Date datePublication, Date dateFin, String commentaire, Employe charge, Client demandeur) {
         this.datePublication = datePublication;
         this.dateFin = dateFin;
         this.commentaire = commentaire;
-        this.heureFin = heureFin;
-        this.status = status;
+        this.status = null;
+        this.charge = charge;
+        this.demandeur = demandeur;
     }
+
+    
 
     public DemandeIntervention() {
     }
@@ -79,14 +92,6 @@ public abstract class DemandeIntervention
         this.commentaire = commentaire;
     }
 
-    public Integer getHeureFin() {
-        return heureFin;
-    }
-
-    public void setHeureFin(Integer heureFin) {
-        this.heureFin = heureFin;
-    }
-
     public DemandeInterventionStatus getStatus() {
         return status;
     }
@@ -94,4 +99,45 @@ public abstract class DemandeIntervention
     public void setStatus(DemandeInterventionStatus status) {
         this.status = status;
     }
+
+    public Employe getCharge() {
+        return charge;
+    }
+
+    public void setCharge(Employe charge) {
+        this.charge = charge;
+    }
+
+    public Client getDemandeur() {
+        return demandeur;
+    }
+
+    public void setDemandeur(Client demandeur) {
+        this.demandeur = demandeur;
+    }
+    
 }
+
+    /* REFERENCE
+    
+    @Entity
+    public class Department {
+    @Id
+    private long id;
+    @OneToOne
+    private Employee manager;
+    @OneToMany(mappedBy="department")
+    private List<Employee> employees;
+    ...
+    }
+
+    @Entity
+    public class Employee {
+    @Id
+    private long id;
+    @ManyToOne
+    @JoinColumn(name="DEPT_ID")
+    private Department department;
+    }
+    
+    */

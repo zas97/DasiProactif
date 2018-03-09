@@ -24,6 +24,7 @@ public abstract class DAOEmploye
     public static List<Employe> getEmployes()
     {
         EntityManager em = JpaUtil.obtenirEntityManager();
-        return em.createQuery("SELECT c FROM Employe c").getResultList();
+        System.err.println(em);
+        return em.createQuery("SELECT e FROM Employe e").getResultList();
     }
 }

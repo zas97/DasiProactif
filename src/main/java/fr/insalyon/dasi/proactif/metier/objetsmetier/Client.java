@@ -1,6 +1,7 @@
 package fr.insalyon.dasi.proactif.metier.objetsmetier;
 
 
+import com.google.maps.model.LatLng;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import util.GoogleMapUtil;
 
 /**
  *
@@ -32,13 +34,14 @@ public class Client
     
     private String numeroTelephone;
     
-    private Integer latitude;
-    private Integer longitude;
-    
     @Column(unique=true)
     private String mail;
     
     private String motDePasse;
+    
+    
+    private LatLng position;
+    
 
     public Integer getIdClient() {
         return idClient;
@@ -96,22 +99,6 @@ public class Client
         this.numeroTelephone = numeroTelephone;
     }
 
-    public Integer getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Integer latitude) {
-        this.latitude = latitude;
-    }
-
-    public Integer getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Integer longitude) {
-        this.longitude = longitude;
-    }
-
     public String getMail() {
         return mail;
     }
@@ -128,7 +115,7 @@ public class Client
         this.motDePasse = motDePasse;
     }
 
-	// we do not set id ourselves
+    // we do not set id ourselves
     public Client(String nom, String prenom, String civilite, Date dateNaissance, String adressePostale, String numeroTelephone, String mail, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
@@ -138,6 +125,9 @@ public class Client
         this.numeroTelephone = numeroTelephone;
         this.mail = mail;
         this.motDePasse = motDePasse;
+        
+        
+        this.position = GoogleMapUtil.getLatLng(adressePostale);
     }
     
     public Client()

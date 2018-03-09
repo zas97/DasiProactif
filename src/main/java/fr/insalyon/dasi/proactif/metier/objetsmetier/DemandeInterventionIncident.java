@@ -10,9 +10,10 @@ import javax.persistence.Entity;
 public class DemandeInterventionIncident extends DemandeIntervention implements Serializable
 {
 
-    public DemandeInterventionIncident(Date datePublication, Date dateFin, String commentaire, Integer heureFin, DemandeInterventionStatus status) {
-        super(datePublication, dateFin, commentaire, heureFin, status);
+    public DemandeInterventionIncident(Date datePublication, Date dateFin, String commentaire, Employe charge, Client demandeur) {
+        super(datePublication, dateFin, commentaire, charge, demandeur);
     }
+
 
     public DemandeInterventionIncident() {
     }

@@ -10,10 +10,12 @@ public class DemandeInterventionAnimal extends DemandeIntervention implements Se
 {
     private String animal;
 
-    public DemandeInterventionAnimal(String animal, Date datePublication, Date dateFin, String commentaire, Integer heureFin, DemandeInterventionStatus status) {
-        super(datePublication, dateFin, commentaire, heureFin, status);
+    public DemandeInterventionAnimal(String animal, Date datePublication, Date dateFin, String commentaire, Employe charge, Client demandeur) {
+        super(datePublication, dateFin, commentaire, charge, demandeur);
         this.animal = animal;
     }
+
+   
 
     public DemandeInterventionAnimal() {
     }
@@ -25,6 +27,6 @@ public class DemandeInterventionAnimal extends DemandeIntervention implements Se
     public void setAnimal(String animal) {
         this.animal = animal;
     }
-        
-        
+
+    
 }
