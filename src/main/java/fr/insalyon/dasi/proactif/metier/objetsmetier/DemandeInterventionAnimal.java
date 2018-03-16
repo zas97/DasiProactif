@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 
+
 @Entity
 public class DemandeInterventionAnimal extends DemandeIntervention implements Serializable {
 

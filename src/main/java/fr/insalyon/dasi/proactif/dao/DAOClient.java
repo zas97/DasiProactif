@@ -36,6 +36,5 @@ public abstract class DAOClient {
             return null;
 
         return result.get(0);
-
     }
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 
+
 @Entity
 public class DemandeInterventionIncident extends DemandeIntervention implements Serializable {
 
@@ -13,5 +14,4 @@ public class DemandeInterventionIncident extends DemandeIntervention implements 
 
     public DemandeInterventionIncident() {
     }
-    
 }

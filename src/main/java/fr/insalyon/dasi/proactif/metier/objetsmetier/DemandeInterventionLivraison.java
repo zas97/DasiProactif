@@ -1,6 +1,7 @@
 package fr.insalyon.dasi.proactif.metier.objetsmetier;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 
 @Entity

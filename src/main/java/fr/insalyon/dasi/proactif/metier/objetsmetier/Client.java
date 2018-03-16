@@ -144,7 +144,5 @@ public class Client implements Serializable {
     public String toString() {
         return "Client{" + "idClient=" + idClient + ", nom=" + nom + ", prenom=" + prenom + ", civilite=" + civilite + ", dateNaissance=" + dateNaissance + ", adressePostale=" + adressePostale + ", numeroTelephone=" + numeroTelephone + ", mail=" + mail + ", motDePasse=" + motDePasse + ", position=" + position + '}';
     }
-
-    
     
 }

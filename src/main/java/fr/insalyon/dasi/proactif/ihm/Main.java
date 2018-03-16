@@ -1,5 +1,6 @@
 package fr.insalyon.dasi.proactif.ihm;
 
+
 import com.google.maps.model.LatLng;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,7 +28,6 @@ import java.util.List;
 // TODO : no binome dans compte rendu
 // TODO : diagrammes
 // TODO : patterns
-// TODO : annotation
 
 
 // TODO : cas ou aucune demande n'est en cours

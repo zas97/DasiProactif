@@ -21,11 +21,12 @@ import com.google.maps.model.TravelMode;
     <version>0.2.6</version>
 </dependency>
  */
+
 public class GoogleMapUtil {
 
-    final static String MA_CLÉ_GOOGLE_API = "AIzaSyAhf3JleYpal9S-xouJYH8lf7Dvz5Y2Nko";
+    final static String MA_CLE_GOOGLE_API = "AIzaSyAhf3JleYpal9S-xouJYH8lf7Dvz5Y2Nko";
 
-    final static GeoApiContext MON_CONTEXTE_GEOAPI = new GeoApiContext.Builder().apiKey(MA_CLÉ_GOOGLE_API).build();
+    final static GeoApiContext MON_CONTEXTE_GEOAPI = new GeoApiContext.Builder().apiKey(MA_CLE_GOOGLE_API).build();
 
     public static LatLng getLatLng(String adresse) {
         try {

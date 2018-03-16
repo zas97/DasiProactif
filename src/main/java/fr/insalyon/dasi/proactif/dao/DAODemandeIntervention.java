@@ -5,6 +5,7 @@
  */
 package fr.insalyon.dasi.proactif.dao;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -97,6 +98,4 @@ public abstract class DAODemandeIntervention {
         
         return demandeInterventions;
     }
-    
-    
 }

@@ -8,7 +8,7 @@ import javax.persistence.RollbackException;
 /**
  * Cette classe fournit des méthodes statiques utiles pour accéder aux
  * fonctionnalités de JPA (Entity Manager, Entity Transaction). Le nom de
- * l'unité de persistance (PERSISTENCE_UNIT_NAME) doit être conforme à la
+ * l'unité de persistance (PERSISTENCE_UNIT_NAME) doit étre conforme à la
  * configuration indiquée dans le fichier persistence.xml du projet.
  *
  * @author DASI Team
@@ -69,7 +69,7 @@ public abstract class JpaUtil {
 
     /**
      * Initialise la Factory de Entity Manager.
-     * <br><strong>À utiliser uniquement au début de la méthode main() [projet
+     * <br><strong>é utiliser uniquement au début de la méthode main() [projet
      * Java Application] ou dans la méthode init() de la Servlet Contrôleur
      * (ActionServlet) [projet Web Application].</strong>
      */
@@ -83,7 +83,7 @@ public abstract class JpaUtil {
 
     /**
      * Libère la Factory de Entity Manager.
-     * <br><strong>À utiliser uniquement à la fin de la méthode main() [projet
+     * <br><strong>é utiliser uniquement à la fin de la méthode main() [projet
      * Java Application] ou dans la méthode destroy() de la Servlet Contrôleur
      * (ActionServlet) [projet Web Application].</strong>
      */
@@ -97,7 +97,7 @@ public abstract class JpaUtil {
 
     /**
      * Créée l'instance courante de Entity Manager (liée à ce Thread).
-     * <br><strong>À utiliser uniquement au niveau Service.</strong>
+     * <br><strong>é utiliser uniquement au niveau Service.</strong>
      */
     public static void creerEntityManager() {
         log("Création du contexte de persistance");
@@ -106,7 +106,7 @@ public abstract class JpaUtil {
 
     /**
      * Ferme l'instance courante de Entity Manager (liée à ce Thread).
-     * <br><strong>À utiliser uniquement au niveau Service.</strong>
+     * <br><strong>é utiliser uniquement au niveau Service.</strong>
      */
     public static void fermerEntityManager() {
         log("Fermeture du contexte de persistance");
@@ -117,7 +117,7 @@ public abstract class JpaUtil {
 
     /**
      * Démarre une transaction sur l'instance courante de Entity Manager.
-     * <br><strong>À utiliser uniquement au niveau Service.</strong>
+     * <br><strong>é utiliser uniquement au niveau Service.</strong>
      */
     public static void ouvrirTransaction() {
         log("Ouverture de la transaction (begin)");
@@ -132,7 +132,7 @@ public abstract class JpaUtil {
 
     /**
      * Valide la transaction courante sur l'instance courante de Entity Manager.
-     * <br><strong>À utiliser uniquement au niveau Service.</strong>
+     * <br><strong>é utiliser uniquement au niveau Service.</strong>
      *
      * @exception RollbackException lorsque le <em>commit</em> n'a pas réussi.
      */
@@ -151,7 +151,7 @@ public abstract class JpaUtil {
      * Annule la transaction courante sur l'instance courante de Entity Manager.
      * Si la transaction courante n'est pas démarrée, cette méthode n'effectue
      * aucune opération.
-     * <br><strong>À utiliser uniquement au niveau Service.</strong>
+     * <br><strong>é utiliser uniquement au niveau Service.</strong>
      */
     public static void annulerTransaction() {
         try {
@@ -171,7 +171,7 @@ public abstract class JpaUtil {
 
     /**
      * Retourne l'instance courante de Entity Manager.
-     * <br><strong>À utiliser uniquement au niveau DAO.</strong>
+     * <br><strong>é utiliser uniquement au niveau DAO.</strong>
      *
      * @return instance de Entity Manager
      */
